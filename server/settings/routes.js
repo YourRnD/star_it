@@ -7,4 +7,10 @@ module.exports = (app) => {
     app
         .route('/api/users/getAllUsers')
         .get(usersController.getAllUsers);
+    app
+        .route('/api/users/signup')
+        .post(usersController.signup);
+    app
+        .route('/api/users/signin')
+        .get(usersController.signin);
 };
