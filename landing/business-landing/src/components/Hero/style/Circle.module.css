@@ -1,0 +1,24 @@
+@media (min-width: 768px){
+    .container::after{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: -1;
+
+        content: "";
+
+        width: 800px;
+        height: 800px;
+        background: url("../img/visual.svg") 0 0 no-repeat;
+        background-size: contain;
+
+        transform: translate(75%, -50%);
+    }
+}
+
+@media (min-width: 1200px){
+    .container::after{
+        width: 900px;
+        height: 900px;
+    }
+}

@@ -1,0 +1,76 @@
+.box{
+    position: relative;
+
+    width: 20px;
+    height: 12px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box span{
+    position: relative;
+    display: block;
+    background: transparent;
+}
+
+.box span:after,
+.box span:before{
+    position: absolute;
+
+    content: "";
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    background: var(--secondary-color);
+
+    transition: 0.5s;
+}
+
+.box span:after{
+    right: 0;
+}
+
+.box span:before{
+    left: 0;
+}
+
+.close span:after{
+    right: -4px;
+}
+
+.close span:before{
+    left: -4px;
+}
+
+.close span:first-of-type:after{
+    transform-origin: left top;
+    transform: rotate(45deg);
+}
+
+.close span:first-of-type:before{
+    transform-origin: right top;
+    transform: rotate(-45deg);
+}
+
+.close span:last-of-type:before{
+    transform-origin: right bottom;
+    transform: rotate(45deg);
+}
+
+.close span:last-of-type:after{
+    transform-origin: left bottom;
+    transform: rotate(-45deg);
+}
+
+.close span:nth-of-type(2):after{
+    width: 0;
+}
+.close span:nth-of-type(2):before{
+    width: 0;
+}

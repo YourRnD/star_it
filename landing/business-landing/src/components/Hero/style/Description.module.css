@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    text-align: center;
+}
+
+.title{
+    order: -1;
+
+    margin: 0;
+
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2em;
+    color: var(--color-title);
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    .title{
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px){
+    .title{
+        font-size: 3em;
+        flex-grow: 2;
+    }
+}
+
+.mark{
+    color: var(--secondary-color);
+}
+
+.text{
+    font-weight: normal;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    .text{
+        text-align: left;
+    }
+}

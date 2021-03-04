@@ -1,0 +1,25 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 12px 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 30px;
+
+    color: var(--secondary-color);
+    background: transparent;
+
+    transition: 0.5s;
+}
+
+.menu:focus{
+    outline: none;
+}
+
+.menu:hover{
+    box-shadow: 0 0 12px;
+    cursor: pointer;
+}
+
