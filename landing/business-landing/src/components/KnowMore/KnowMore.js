@@ -12,6 +12,6 @@ const KnowMore = () => {
             </a>
     </div>
   );
-}
+};
 
 export default KnowMore;

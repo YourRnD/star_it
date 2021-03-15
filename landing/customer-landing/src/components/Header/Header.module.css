@@ -1,0 +1,37 @@
+
+.container{
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-text);
+    box-shadow: 0 2px 2px;
+    background: #fff;
+}
+
+.container_small{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    padding: 2px 0;
+
+    opacity: 0.5;
+    filter: blur(1px);
+    transition: 1s linear;
+}
+
+.container_small:hover{
+    filter: blur(0);
+    opacity: 1;
+    box-shadow: 0 50px 50px;
+}
+
+.wrap{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+

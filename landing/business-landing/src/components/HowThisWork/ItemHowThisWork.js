@@ -8,7 +8,7 @@ const ItemHowThisWork = ({items}) => {
         <Zoom>
             <div className={styles.howThisWorkItems}>
                 <img src={items.logo} className={styles.howThisWorkImg} alt="Icon" />
-                <div className={styles.howThisWorkContent}>
+                <div className={styles.howThisWorkCard}>
                     <p className={styles.howThisWorkText}>
                         {items.title}
                     </p>
@@ -16,6 +16,6 @@ const ItemHowThisWork = ({items}) => {
             </div>
         </Zoom>
     );
-}
+};
 
 export default ItemHowThisWork;

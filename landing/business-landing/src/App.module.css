@@ -1,0 +1,12 @@
+.page{
+  background: 
+      url("./components/picture/bg-right.svg") top right no-repeat,
+      url("./components/picture/bg-left.svg") bottom left no-repeat;
+}
+.wrapper {
+  max-width: 1800px;
+  margin: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

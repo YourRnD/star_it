@@ -1,0 +1,76 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    text-align: center;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    order: -1;
+    margin: 0;
+
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2em;
+    color: var(--color-title);
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    .title{
+        text-align: left;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1200px){
+    .title{
+        font-size: 3em;
+        flex-grow: 2;
+    }
+}
+
+.mark{
+    transform: scale(0);
+    color: var(--secondary-color);
+    animation-name: showMark;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.mark:nth-child(2){
+    animation-delay: 1s;
+}
+
+.mark:nth-child(3){
+    animation-delay: 2s;
+}
+
+.text{
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    .text{
+        text-align: left;
+    }
+}
+
+@keyframes showMark {
+    0%{
+        color: var(--secondary-color);
+        transform: scale(0);
+    }
+    100%{
+        color: var(--color-other);
+        transform: scale(1);
+    }
+}

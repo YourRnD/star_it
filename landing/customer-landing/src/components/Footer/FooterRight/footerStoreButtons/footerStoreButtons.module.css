@@ -1,0 +1,22 @@
+.buttons{
+    display: flex;
+    width: 35%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttonLink{
+    width: 100px;
+    height: 42px;
+    }
+.picture{
+    width: 100px;
+    height: 42px;
+}
+@media(max-width:730px){
+    .buttons{
+        width:90%;
+    }
+}

@@ -1,13 +1,14 @@
 import React from 'react';
-import  s from './HowItworks.module.css';
-import HowItWorksItem1 from './HowItWorksItems/HowItWorkstem1'
-import HowItWorksItem2 from './HowItWorksItems/HowItWorkstem2'
-import HowItWorksItem3 from './HowItWorksItems/HowItWorkstem3'
+import  HowItWorksModule from './HowItworks.module.css';
+import HowItWorksItem1 from './HowItWorksItems/HowItWorksItem1';
+import HowItWorksItem2 from './HowItWorksItems/HowItWorksItem2';
+import HowItWorksItem3 from './HowItWorksItems/HowItWorksItem3';
+
 const HowItWorks = () => {
     return (
-    <div>
-        <div className={s.howItWorks__header}>Как это работает</div>
-      <div className={s.howItWorks}>
+    <div id="HowItworks">
+        <h2 className={HowItWorksModule.HowItWorks__header}>How it works</h2>
+      <div className={HowItWorksModule.HowItWorks}>
         <HowItWorksItem1/>
         <HowItWorksItem2/>
         <HowItWorksItem3/>
