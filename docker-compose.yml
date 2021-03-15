@@ -64,20 +64,20 @@ services:
             - "33307:3306"
         container_name: "app_backend_mysql"
 
-    # app-node-customer:
-    #     build:
-    #         context: ./
-    #         dockerfile: /config/docker/DockerNode
-    #         args:
-    #             - service_path=customer
-    #             - port=3000
-    #     ports: 
-    #         - 3000:3000
-    #     container_name: "app_node_customer"
-    #     stdin_open: "true"
-    #     volumes:
-    #         - ./customer/:/usr/sites/starit_app/customer/
-    #         - /usr/sites/starit_app/customer/node_modules
+    app-node-customer:
+        build:
+            context: ./
+            dockerfile: ./config/docker/DockerNode
+            args:
+                - service_path=customer
+                - port=3000
+        ports: 
+            - 3000:3000
+        container_name: "app_node_customer"
+        stdin_open: "true"
+        volumes:
+            - ./customer/:/usr/sites/starit_app/
+            - /usr/sites/starit_app/customer/node_modules
     
     # app-node-business:
     #     build:
