@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./FormFeedbeak.module.css";
-import icon_camera from "./icon_camera.svg";
+import icon_camera from "../../assets/icon_camera.png";
 
 const FormFeedbeak = () => {
     return(
