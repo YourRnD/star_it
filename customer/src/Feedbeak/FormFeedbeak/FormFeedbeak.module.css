@@ -1,0 +1,68 @@
+.container {
+    max-width: 1200px;
+    padding: 50px 0 20px;
+    background: linear-gradient(to right, #d4e0d4, #72db72);
+}
+.containerForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 18px;
+    color: #030c06;
+}
+.imgCamera {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    margin: 20px 20px 20px 0;
+}
+.imgCamera:focus {
+    outline: none;
+}
+.labelBox {
+    display: flex;
+    align-items: center;
+}
+.inputBox {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.feedbeakText:focus {
+    outline: none;
+}
+.feedbeakText {
+    position: relative;
+    width: 60%;
+    margin-right: 20%;
+    height: 80px;
+    border: none;
+    border-bottom: 2px solid #021a02;
+    background: inherit;
+}
+.feedbeakText::-webkit-input-placeholder {
+    position: absolute;
+    bottom : 5%;
+    left: 42%;
+    color: #1a501a;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.sendButton {
+    width: 20vw;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 40%;
+    border: 5px double #ffffff;
+    border-radius: calc(20vw/2);
+    background: inherit;
+    font-size: 24px;
+    color: #266926;
+}
+.sendButton:focus {
+    outline: none;
+}
