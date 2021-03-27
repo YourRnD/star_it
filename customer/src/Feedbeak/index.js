@@ -27,7 +27,10 @@ const Feedbeak = () => {
             nameType : 'room #100'
         }
     }
-
+    const [countStart,setCountStar] = useState(5);    
+    const ratingChanged = (newRating) => {
+      setCountStar(newRating);
+    };
     return(
     <div>
         <div className={styles.containerInfo}>
