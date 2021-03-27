@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 import styles from "./Feedbeak.module.css";
 import FormFeedbeak from "./FormFeedbeak";
-import App from "./App";
 import ReactStars from "react-rating-stars-component";
-import logo_silpo from "../../assets/logo_silpo.png";
-import logo_clock from "../../assets/logo_clock.png";
+import logo_silpo from "../assets/logo_silpo.png";
+import logo_clock from "../assets/logo_clock.png";
 
 
 const Feedbeak = () => {
