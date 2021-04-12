@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import styles from "./Feedbeak.module.css";
 import logo_clock from "../assets/logo_clock.png";
 import ReactStars from "react-rating-stars-component";
-import FormFeedbeak from "./FormFeedbak/FormFeedbeak";
+import FormFeedbeak from "./FormFeedbeak";
 
 
 
