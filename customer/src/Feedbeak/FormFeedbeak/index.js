@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./FormFeedbeak.module.css";
-import icon_camera from "../../assets/icon_camera.svg";
+import logo_camera from "../../assets/icon_camera.svg";
+import {Link} from "react-router-dom";
 
 const FormFeedbeak = () => {
     return(
@@ -11,10 +12,10 @@ const FormFeedbeak = () => {
                     <input type="checkbox" name="answer" value="answer"  className={styles.inputBox} />
                 </label>
                 <button className={styles.imgCamera}>
-                    <img src={icon_camera} alt="Camera" />
+                  <img src={logo_camera} alt="CAMERA" />
                 </button>
                 <textarea name="feedbeak" className={styles.feedbeakText} placeholder="feedbeak"></textarea>
-                <button className={styles.sendButton}><strong>SEND</strong></button>
+                <button className={styles.sendButton}><Link to="/report"><strong>SEND</strong></Link></button>
             </form>
         </div>
     );
