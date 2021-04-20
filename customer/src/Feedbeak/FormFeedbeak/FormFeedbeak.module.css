@@ -60,7 +60,8 @@
     width: 30vw;
     height: 80px;
     margin-top: 50px;
-    margin-right: 35%;
+    margin-right: auto;
+    margin-left: auto;
     border: 5px double #ffffff;
     border-radius: calc(20vw/2);
     background: inherit;
