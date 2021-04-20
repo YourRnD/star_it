@@ -18,7 +18,7 @@ const Thanks = (props) => {
             <p className={thanks.score}>your score</p>
             <ReactStars
                 classNames={thanks.stars}
-                count={5}
+                count={props.location.state.rating}
                 value={props.location.state.rating}
                 size={35}
                 edit={false}
