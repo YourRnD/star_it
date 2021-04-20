@@ -3,13 +3,13 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /*gap: 30px;*/
 
     min-height: 80vh;
     padding: 20px;
 }
 
 .wrap {
+    max-width: 60%;
     padding: 30px 0;
 }
 
