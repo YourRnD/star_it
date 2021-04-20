@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 15px 20px 30px;
+    min-height: 80vh;
+}
+
+div[aria-label="add rating by typing an integer from 0 to 5 or pressing arrow keys"]:focus{
+    outline: none !important;
+}
+
