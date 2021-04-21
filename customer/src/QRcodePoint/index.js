@@ -7,7 +7,7 @@ import {
 import Feedbeak from '../Feedbeak';
 import { useParams } from "react-router-dom";
 import ThanksForReview from "../ThanksForReview";
-import FormFeedbeak from '../FormFeedbak';
+import FormFeedbeak from '../FormFeedbeak';
 import logo_silpo from "../assets/logo_silpo.png";
  
 
