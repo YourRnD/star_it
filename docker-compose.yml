@@ -3,8 +3,6 @@ services:
     server-nginx:
         image: "nginx:latest"
         volumes:
-#            - ./server/api/:/usr/sites/starit_server/api
-#            - ./server/backend/:/usr/sites/starit_server/backend
             - ./server/:/usr/sites/starit_server
             - ./config/nginx/server.conf:/etc/nginx/conf.d/default.conf
         ports:
@@ -17,8 +15,6 @@ services:
         working_dir: /usr/sites/starit_server
     server-php:
         volumes:
-#            - ./server/api/:/usr/sites/starit_server/api
-#            - ./server/backend/:/usr/sites/starit_server/backend
             - ./server/:/usr/sites/starit_server
         links:
             - server-mysql
@@ -36,29 +32,6 @@ services:
             - "33306:3306"
         container_name: "server_mysql"
 
-    # app-nginx:
-    #     image: "nginx:latest"
-    #     volumes:
-    #         - ./server/backend/:/usr/sites/starit_app/
-    #         - ./config/nginx/app.conf:/etc/nginx/conf.d/default.conf
-    #     ports:
-    #         - "8080:80"
-    #     environment:
-    #         - NGINX_PORT=80
-    #     links:
-    #         - app-php
-    #     container_name: "app_nginx"
-    #     working_dir: /usr/sites/starit_app/
-    # app-php:
-    #     volumes:
-    #         - ./server/backend/:/usr/sites/starit_app/
-    #     links:
-    #         - app-backend-mysql
-    #     container_name: "app_backend"
-    #     build:
-    #         context: .
-    #         dockerfile: ./config/docker/DockerApp
-    #     working_dir: /usr/sites/starit_app
     app-backend-mysql:
         image: "mysql:5.7.32"
         environment:
