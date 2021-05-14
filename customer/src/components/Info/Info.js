@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
 
 import Send from "../Send/Send";
@@ -10,14 +10,25 @@ import info from "../Info/info.module.css";
 const Info = (props) => {
     const businessId = props.match.params.businessId;
     const pointerId = props.match.params.pointerId;
+    const requestURL = `http://localhost:3004/business/${businessId}`;
 
     const [business, setBusiness] = useState(null);
     const [address, setAddress] = useState(null);
     const [point, setPoint] = useState(null);
     const [logo, setLogo] = useState(null);
     const [comment, setComment] = useState(null);
-    const [answer, setAnswer] = useState(null);
-    const [rating, setRating] = useState(0);
+    const [answer, setAnswer] = useState(false);
+    const [rating, setRating] = useState(5);
+    const [color, setColor] = useState('130, 160, 220');
+
+    function sendRequest(url){
+        return fetch(url).then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+    }
 
     useEffect(() => {
         let error = (bool) => {
@@ -27,27 +38,27 @@ const Info = (props) => {
             return bool;
         };
         loading(true);
-        fetch(`http://localhost:3000/business.json`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("HTTP error " + response.status);
-                }
-                return response.json();
-            })
+
+        sendRequest(requestURL)
             .then(value => {
                 loading(false);
                 error(false);
-                setBusiness(value.business[businessId].name);
-                setPoint(value.business[businessId].points[pointerId].id);
-                setAddress(value.business[businessId].points[pointerId].address);
-                setLogo(value.business[businessId].logo);
+                setBusiness(value.name);
+                setPoint(value.points[pointerId].id);
+                setAddress(value.points[pointerId].address);
+                setLogo(value.logo);
+                setColor(value.color);
             })
             .catch(err => {
                 console.log(err);
                 loading(false);
                 error(true);
             });
+
     }, []);
+    useEffect(()=>{
+        document.documentElement.style.setProperty('--rgb-dark-blue', color);
+    });
 
     const userComment = (newComment) => {
         setComment(newComment);
@@ -91,3 +102,5 @@ const Info = (props) => {
 
 const InfoWithRouter = withRouter(Info);
 export default InfoWithRouter;
+
+
