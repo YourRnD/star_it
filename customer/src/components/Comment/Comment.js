@@ -1,38 +1,26 @@
 import React, {useState} from 'react';
 import comment from "./comment.module.css";
+import TextareaAutosize from 'react-autosize-textarea';
 
 const Comment = (props) => {
     const initComment = 'Feedback';
-    const[userComment, setComment] = useState(initComment);
+    const[userComment, setComment] = useState('');
 
     const handleOut = (e) => {
-        setComment(e.target.innerText);
+        setComment(e.target.value);
         return userComment;
     };
 
-    const handleClick = (e) => {
-        if(e.target.innerText === initComment){
-            setComment('');
-        }
-    };
-
-    const handleBlur = (e) => {
-        if(e.target.innerText === ''){
-            setComment(initComment);
-        }
-        return e.target.innerText;
-    };
-
-
     return (
-        <div
-            className={`${comment.item} ${userComment === initComment? comment.item_center : null}`}
-            contentEditable={true}
-            onClick = {handleClick}
-            onBlur={(e) => props.onClick(handleBlur(e))}
+        <TextareaAutosize
+            title='max-length 200 char'
+            placeholder={initComment}
+            maxLength={200}
+            rows={1}
+            value={userComment}
+            className={comment.item}
             onChange={(e) => props.onClick(handleOut(e))}
-            suppressContentEditableWarning={true}
-        >{userComment}</div>
+        />
     );
 };
 
