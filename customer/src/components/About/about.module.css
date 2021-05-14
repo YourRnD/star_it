@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin-bottom: 15px;
 
+    min-height: 100px;
     padding: 10px;
 }
 
