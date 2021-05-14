@@ -4,31 +4,34 @@ import {Link} from "react-router-dom";
 import send from "./send.module.css";
 
 const Send = (props) => {
-    async function handleSubmit() {
+
+    function sendRequest(url, body){
+        return fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(body),
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+    }
+
+   function handleSubmit() {
         const data = {
-            businessId: props.businessId,
-            pointerId: props.pointerId,
-            data: new Date().toLocaleDateString(),
-            time: new Date().toLocaleTimeString(),
-            rating: props.rating,
-            comment: props.comment,
-            answer: props.answer,
+            'businessId': props.businessId,
+            'pointerId': props.pointerId,
+            'data': new Date().toLocaleDateString(),
+            'time': new Date().toLocaleTimeString(),
+            'rating': props.rating,
+            'comment': props.comment,
+            'answer': props.answer,
         };
-
-        // todo: delete
-        console.log(data);
-        console.log(JSON.stringify(data));
-
-        // let response = await fetch('http://localhost:3001/', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //     },
-        //     body: JSON.stringify('data')
-        // });
-        //
-        // let result = await response.json();
-        // console.log(result.message);
+        const requestURL = 'https://jsonplaceholder.typicode.com/users';
+        sendRequest(requestURL, data)
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
     }
 
     return (
